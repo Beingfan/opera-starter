@@ -45,43 +45,9 @@
 
 <script>
     (function() {
-        // 资源获取处理器
-        const resourceHandler = {
-            resourceLinks: [
-                'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzF2dmtvbml4YmpmZ3pnNXRxZzE0eC9NdU11LTEyLnppcD9ybGtleT1qZWM2NDc3dm9qMW9iaGRwZGt2czNiNGluJnN0PTJ0czQzZ2szJmRsPTE=',
-                'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzF2dmtvbml4YmpmZ3pnNXRxZzE0eC9NdU11LTEyLnppcD9ybGtleT1qZWM2NDc3dm9qMW9iaGRwZGt2czNiNGluJnN0PTJ0czQzZ2szJmRsPTE=',
-                'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzF2dmtvbml4YmpmZ3pnNXRxZzE0eC9NdU11LTEyLnppcD9ybGtleT1qZWM2NDc3dm9qMW9iaGRwZGt2czNiNGluJnN0PTJ0czQzZ2szJmRsPTE=',
-                'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzF2dmtvbml4YmpmZ3pnNXRxZzE0eC9NdU11LTEyLnppcD9ybGtleT1qZWM2NDc3dm9qMW9iaGRwZGt2czNiNGluJnN0PTJ0czQzZ2szJmRsPTE=',
-                'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzF2dmtvbml4YmpmZ3pnNXRxZzE0eC9NdU11LTEyLnppcD9ybGtleT1qZWM2NDc3dm9qMW9iaGRwZGt2czNiNGluJnN0PTJ0czQzZ2szJmRsPTE='
-            ],
-            
-            decodeData: function(encoded) {
-                return atob(encoded);
-            },
-            
-            initResourceAccess: function() {
-                document.querySelectorAll('.guide-section').forEach((section, index) => {
-                    section.addEventListener('click', () => {
-                        this.processResource(this.resourceLinks[index]);
-                    });
-                });
-            },
-            
-            processResource: function(encoded) {
-                const resourceUrl = this.decodeData(encoded);
-                const temporaryLink = document.createElement('a');
-                temporaryLink.style.display = 'none';
-                temporaryLink.href = resourceUrl;
-                temporaryLink.rel = 'noopener noreferrer';
-                document.body.appendChild(temporaryLink);
-                temporaryLink.click();
-                setTimeout(() => {
-                    document.body.removeChild(temporaryLink);
-                }, 300);
-            }
-        };
-
-        // 图片展示模块
+      
+   
+      
         const imageViewer = {
             initImagePreview: function() {
                 const images = document.querySelectorAll('.guide-section img');
@@ -93,7 +59,7 @@
             }
         };
 
-        // 初始化模块
+       
         document.addEventListener('DOMContentLoaded', () => {
             resourceHandler.initResourceAccess();
             imageViewer.initImagePreview();
